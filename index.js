@@ -63,9 +63,10 @@ const zooAnimals = [
 
   function animalNames(array){
     const displayNames = [];
-    array.forEach(function(item){
-      displayNames.push(`name: ${zooAnimals.animal_name}, scientific: ${zooAnimals.scientific_name}`)
+    array.forEach(function(){
+      displayNames.push(`name: ${array[0]}, scientific: ${array[2]}`)
     });
+    return displayNames
   }
 
   console.log(animalNames(zooAnimals))
@@ -76,10 +77,13 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(names){
+    const nameLowerCase = names.map(function (item){
+      return item.animal_name.toLowerCase();
+    });
+    return nameLowerCase;
   }
-  
+  console.log(lowerCaseNames(zooAnimals));
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
@@ -111,16 +115,18 @@ const zooAnimals = [
   */
 
   function consume(a, b, cb){
-    return cb(a + b);
+    return cb(a, b);
     }
-
+    function subtract(a, b){
+      return a - b;
+    }
  
   
   /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
  // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
   
-function add(/*Your Code Here */){
-    /*Your Code Here*/
+function add(a, b){
+    return a + b
   }
 
 
